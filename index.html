@@ -2,24 +2,29 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mein Tisch – Startseite</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
   <nav class="navbar">
     <div class="logo">Mein Tisch</div>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <div class="mobile-controls">
+      <button class="darkmode-toggle" aria-label="Darkmode umschalten"><img src="mondicon.png" alt="Mond Icon" class="moon-icon"></button>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </div>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Startseite</a></li>
       <li><a href="projekt.html">Projekt</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="ueber-uns.html">Über uns</a></li>
+      <li class="desktop-theme-toggle">
+        <button class="darkmode-toggle" aria-label="Darkmode umschalten"><img src="mondicon.png" alt="Mond Icon" class="moon-icon"></button>
+      </li>
     </ul>
   </nav>
 
-  <main class="content">
+  <main class="content centered">
     <h1>Ein Tisch, der Geschichte erzählt.</h1>
     <p>Handgefertigt. Einzigartig. Zeitlos schön.</p>
     <a href="shop.html" class="button">Jetzt entdecken</a>
