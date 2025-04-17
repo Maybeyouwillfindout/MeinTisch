@@ -2,36 +2,38 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shop – Mein Tisch</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
-
+<body class="shop">
   <nav class="navbar">
     <div class="logo">Mein Tisch</div>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <div class="mobile-controls">
+      <button class="darkmode-toggle" aria-label="Darkmode umschalten"><img src="mondicon.png" alt="Mond Icon" class="moon-icon"></button>
+      <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    </div>
     <ul class="nav-links" id="nav-links">
       <li><a href="index.html">Startseite</a></li>
       <li><a href="projekt.html">Projekt</a></li>
       <li><a href="shop.html">Shop</a></li>
       <li><a href="ueber-uns.html">Über uns</a></li>
+      <li class="desktop-theme-toggle">
+        <button class="darkmode-toggle" aria-label="Darkmode umschalten"><img src="mondicon.png" alt="Mond Icon" class="moon-icon"></button>
+      </li>
     </ul>
   </nav>
-
   <main class="content">
-    <img src="tisch-placeholder.jpg" alt="Tisch aus Eishockeystöcken">
-    <h1 style="margin-top: 40px;">Handgefertigter Unikat-Tisch</h1>
-    <p class="description">
-      Gefertigt aus echten Eishockeystöcken, veredelt mit Glasplatte und massiven, schwarzen Holzbeinen.
-    </p>
-    <a href="mailto:timoruettener@hotmail.com?subject=Anfrage%20zum%20Tisch" class="button">Jetzt anfragen</a>
+    <img src="tisch-placeholder.jpg" alt="Tisch im Shop" class="shop-image" />
+    <h2>Handgemachter Tisch aus Eishockeystöcken</h2>
+    <p><strong>Maße:</strong> ca. 180 × 90 × 75 cm<br>
+       <strong>Material:</strong> Eishockeystöcke, Glasplatte, Massivholzbeine<br>
+       <strong>Preis:</strong> ab 899 € (auf Anfrage)</p>
+    <a href="mailto:timoruettener@hotmail.com?subject=Anfrage%20zum%20Tisch&body=Hallo%20Team%20von%20Mein%20Pers%C3%B6nlicher%20Tisch,%0A%0AIch%20interessiere%20mich%20f%C3%BCr%20euren%20Tisch.%20Bitte%20sendet%20mir%20mehr%20Informationen.%0A%0ADanke!" class="button">Jetzt anfragen</a>
   </main>
-
   <footer class="footer">
     &copy; 2025 Mein Persönlicher Tisch
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
