@@ -220,8 +220,8 @@ body.darkmode .menu-toggle {
 
 
 .moon-icon {
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
     filter: brightness(0) invert(1);
 }
 
