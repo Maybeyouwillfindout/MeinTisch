@@ -1,4 +1,5 @@
-/* Grundlayout */
+
+/* === Grundlayout === */
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
@@ -7,7 +8,12 @@ body {
   transition: all 0.3s ease;
 }
 
-/* Navigation */
+body.darkmode {
+  background-color: #111;
+  color: #fff;
+}
+
+/* === Navigation === */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -20,18 +26,23 @@ body {
   z-index: 1000;
 }
 
+body.darkmode .navbar {
+  background-color: #1c1c1c;
+  border-color: #333;
+}
+
 .logo {
   font-size: 22px;
   font-weight: bold;
 }
 
-/* Menülinks */
 .nav-links {
   display: flex;
-  gap: 40px;
+  gap: 30px;
   list-style: none;
   margin: 0;
   padding: 0;
+  align-items: center;
 }
 
 .nav-links li a {
@@ -41,23 +52,71 @@ body {
   font-size: 16px;
 }
 
-/* Hauptinhalt */
-.content {
-  padding: 160px 20px 60px;
+body.darkmode .nav-links a,
+body.darkmode .logo {
+  color: #fff;
+}
+
+/* === Darkmode Toggle === */
+.darkmode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.darkmode-toggle svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  transition: fill 0.3s ease;
+}
+
+body.darkmode .darkmode-toggle svg {
+  fill: #fff;
+}
+
+body:not(.darkmode) .darkmode-toggle svg {
+  fill: #000;
+}
+
+/* === Zentrierter Inhalt === */
+.content.centered {
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
   text-align: center;
   max-width: 700px;
   margin: auto;
 }
 
-/* Bild */
-.content img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  margin-bottom: 30px;
+/* === Standard Content === */
+.content {
+  padding: 60px 20px;
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
 }
 
-/* Button */
+body.shop .content {
+  padding-top: 40px;
+}
+
+/* === Shop-Bild === */
+.shop-image {
+  max-width: 600px;
+  width: 90%;
+  display: block;
+  margin: 30px auto 20px auto;
+  border-radius: 10px;
+}
+
+/* === Button === */
 .button {
   display: inline-block;
   background-color: #000;
@@ -74,15 +133,30 @@ body {
   background-color: #333;
 }
 
-/* Footer */
+body.darkmode .button {
+  background-color: #fff;
+  color: #111;
+}
+
+body.darkmode .button:hover {
+  background-color: #ddd;
+}
+
+/* === Footer === */
 .footer {
   text-align: center;
   padding: 30px;
   font-size: 14px;
   color: #777;
+  background-color: #f7f7f7;
 }
 
-/* Burger Menü Button */
+body.darkmode .footer {
+  background-color: #111;
+  color: #888;
+}
+
+/* === Burger-Menü === */
 .menu-toggle {
   display: none;
   font-size: 28px;
@@ -90,10 +164,24 @@ body {
   cursor: pointer;
 }
 
-/* Mobile Ansicht */
+body.darkmode .menu-toggle {
+  color: #fff;
+}
+
+.mobile-controls {
+  display: none;
+}
+
+/* === Responsive === */
 @media (max-width: 768px) {
   .menu-toggle {
     display: block;
+  }
+
+  .mobile-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
   }
 
   .nav-links {
@@ -116,4 +204,46 @@ body {
   .nav-links li {
     margin: 10px 0;
   }
+
+  .desktop-theme-toggle {
+    display: none;
+  }
+
+  .mobile-theme-toggle {
+    display: block;
+  }
+
+  body.darkmode .nav-links {
+    background-color: #1c1c1c;
+  }
+}
+
+
+.moon-icon {
+    width: 20px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+}
+
+.moon-icon {
+    width: 20px;
+    height: 20px;
+    transition: filter 0.3s;
+}
+
+/* Standard: schwarz im Lightmode */
+body:not(.darkmode) .moon-icon {
+    filter: brightness(0) invert(0);
+}
+
+/* Weiß im Darkmode */
+body.darkmode .moon-icon {
+    filter: brightness(0) invert(1);
+}
+
+
+/* Fix: Mond-Icon leicht nach unten verschoben */
+.moon-icon {
+  position: relative;
+  top: 2px;
 }
